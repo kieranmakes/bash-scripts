@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# get all urls 
+echo 'put all urls of videos to download seperated by a space, press enter when done'
+read -a arr
+
+for elem in ${arr[@]}
+do
+    youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg $elem
+done
+#
+# download all files
+
+

@@ -1,0 +1,36 @@
+#! /bin/bash
+
+# BASH FILE FOR CREATING AND SETTING UP OTHER BASH FILES
+
+file=$1
+
+# CHECKS THE FILE HAS A NAME AND IT DOESN'T EXSIST ALREADY
+while [ -z $file ] || [ -f $file ]; do
+  if [ -z $file ]; then 
+    echo 'To create a file, a file name must be entered'
+  else
+    file=${file%.*}'.sh'
+    if [ -f $file ]; then
+      echo "$file already exsists. Enter A new file name"
+    fi
+  fi
+ # RE ENTER FILE NAME AND REPLACE ANY FILE EXTENSION WITH .sh
+  read -p 'File Name: ' file
+  file=${file%.*}'.sh'
+done
+
+file=${file%.*}
+
+# CREATE A NEW FILE IN THE CURRENT DIRECTORY
+touch $file
+
+# APPEND #! /bin/bash TO THE FILE
+echo "#! /bin/bash" >> $file
+
+# MAKE FILE EXECUTABLE
+chmod +x $file
+
+# CREATE THE DOCUMENTATION FOR THE SCRIPT IN THE 'myBashScripts' SCRIPT
+echo "echo ''" >> myBashScripts
+read -p "What does this script do: " purpose
+echo "echo '$purpose'" >> myBashScripts

@@ -1,0 +1,20 @@
+#! /bin/bash
+
+#cpp17*       envActivate* newBash*     pyEnv*       pyExe*       ytdl*
+
+echo '---------------------------------------------------------------------------------'
+echo '------------------              MY BASH SCRIPTS           -----------------------'
+echo '---------------------------------------------------------------------------------'
+echo ''
+echo ''
+echo 'cpp17: compiles cpp version 17 source'
+echo ''
+echo 'newBash: creates a new executable bash file in the current dir'
+echo ''
+echo 'ytdl: downloads mp3 files from youtube links'
+echo ''
+echo 'pyEnv: creates a virtual enviroment in the current dir'
+echo ''
+echo 'envActivate: will activate the virtual enviroment. ($deactivate: get out of the virtual enviroment)'
+echo ''
+echo 'pyExe: copies python script to usr/local/python_scripts then makes it executable from the command line in any directory'

@@ -1,0 +1,25 @@
+#! /bin/bash
+
+file_py=$1
+
+if [ -f $file_py ]
+then 
+    cp $file_py ~/usr/local/python_scripts/
+     
+
+    file_sh=${file_py%.*}
+
+    # CREATE A NEW FILE IN THE CURRENT DIRECTORY
+    touch $file_sh
+
+    # APPEND #! /bin/bash TO THE FILE
+    echo "#! /bin/bash" >> $file_sh
+
+    # MAKE FILE EXECUTABLE
+    chmod +x $file_sh
+    
+
+    echo "python ~/usr/local/python_scripts/$file_py" >> ~/usr/local/bin/${file_sh%.*}
+else
+     echo $file_py " does not exist"
+fi

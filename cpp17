@@ -1,0 +1,10 @@
+#! /bin/bash
+
+if [ -z $2 ]; then
+  g++ -std=c++17 $1 -o ${1%.*}
+else
+  g++ -std=c++17 $1 -o $2
+fi
+
+
+
